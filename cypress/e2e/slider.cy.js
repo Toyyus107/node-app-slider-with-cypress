@@ -16,3 +16,15 @@ describe('Swiper Gallery Test', function () {
     cy.get('.swiper-slide-active').should('contain', 'Paris');
   });
 });
+
+
+describe('Swiper Gallery Test', function () {
+    it('Przewija slajdy za pomoca przyciskow nawigacyjnych', function () {
+        cy.visit('http://localhost:3000');
+        cy.get('.swiper-button-next').click();
+        cy.get('.swiper-slide-active').should('exist');
+
+        cy.get('.swiper-button-prev').click();
+        cy.get('.swiper-slide-active').should('exist');
+    });
+});
